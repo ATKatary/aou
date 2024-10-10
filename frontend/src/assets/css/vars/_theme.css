@@ -1,0 +1,25 @@
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-primary: #fff;  
+        --bg-secondary: #f0f0f0;
+
+        --font-color-primary: #000000;
+
+        --primary: #e8def8;
+    }   
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1E201E;  
+        --bg-secondary: #3C3D37;
+
+        --font-color-primary: #ffffff;
+
+        --primary: #4f378a;
+    }   
+}
+
+:root {
+    --controls-width: 275px;
+}

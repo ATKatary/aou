@@ -1,0 +1,36 @@
+/***** Always True *****/
+@media only screen {
+    nav {
+        top: var(--nav-top);
+        position: absolute;
+        left: var(--nav-left);
+        /* height: var(--nav-height); */
+        border-radius: var(--border-radius);
+        background-color: var(--bg-primary);
+    }
+
+    nav > ul {
+        padding: 20px;
+    }
+
+    nav > ul > li::marker{
+        font-size: 0;
+    }
+
+    nav > ul > li {
+        margin: 24px 0;
+    }
+
+    nav > ul > li > a {
+        margin-left: 10px;
+        text-decoration: none;
+        color: var(--font-color-primary);
+        font-size: var(--font-size-title-medium);
+    }
+
+    nav > ul > li > svg {
+        text-decoration: none;
+        color: var(--font-color-primary);
+        font-size: var(--font-size-title-medium);
+    }
+}

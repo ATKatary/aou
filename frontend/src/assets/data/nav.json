@@ -1,0 +1,34 @@
+{
+    "sections": [
+        {
+            "id": "library",
+            "title": "Library",
+            "icon": "fa-fas fa-folder"
+        },
+        {
+            "id": "moodboard",
+            "title": "Moodboard",
+            "icon": "fa-fas fa-sliders"
+        },
+
+        {
+            "id": "empty"
+        },
+
+        {
+            "id": "textTo3D",
+            "title": "Text to 3D",
+            "icon": "fa-fas fa-folder"
+        },
+        {
+            "id": "imageTo3D",
+            "title": "Image to 3D",
+            "icon": "fa-fas fa-file-image"
+        },
+        {
+            "id": "sketchTo3D",
+            "title": "Sketch to 3D",
+            "icon": "fa-fas fa-file-contract"
+        }
+    ]
+}

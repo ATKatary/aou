@@ -1,0 +1,29 @@
+/***** Always True *****/
+@media only screen {
+    #controls { 
+        padding: 20px;
+        position: absolute;
+        top: var(--nav-top);
+        right: var(--nav-left);
+        width:  var(--controls-width);
+        border-radius: var(--border-radius);
+        background-color: var(--bg-primary);
+    }
+
+    #controls > h1 {
+        font-weight: 550;
+        color: var(--font-color-primary);
+        font-size: var(--font-size-title-large);
+    }
+
+    #controls h3 {
+        font-weight: 400;
+        color: var(--font-color-primary);
+        font-size: var(--font-size-title-medium);
+    }
+
+    #controls model-viewer {
+        width: 100%;
+        height: 100%;
+    }
+}
