@@ -1,0 +1,10 @@
+diffusers
+fastapi
+fastapi-cli
+huggingface-hub
+numpy
+torch
+torchaudio
+torchmetrics
+torchvision
+transformers
