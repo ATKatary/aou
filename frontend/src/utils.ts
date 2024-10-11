@@ -19,3 +19,30 @@ export function useCustomState<T>(initialState: any): [T, (newState: any) => any
     
     return [state, setCustomSate];
 }
+
+export async function post(url: RequestInfo | URL, body: any, headers: HeadersInit, other?: any) {
+    return await fetch(url, {
+        method: 'POST',
+        headers: {
+            ...headers
+        },
+        credentials: 'same-origin',
+        body: body,
+        ...other
+    })
+}
+
+export async function get(url: string, args: Object, headers: HeadersInit) {
+    url += "?";
+    for (const [arg, value] of Object.entries(args)) {
+        url += `${arg}=${value}&`
+    }
+
+    return await fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            ...headers
+        },
+    })
+}

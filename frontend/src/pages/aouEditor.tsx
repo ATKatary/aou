@@ -1,8 +1,8 @@
 import React from 'react';
 import { dataType } from '../types';
 import { useCustomState } from '../utils';
-import ImgTo3D from '../components/imgTo3D';
 import navData from '../assets/data/nav.json';
+import Img2Mesh from '../components/img2Mesh';
 import AOUCanvas from '../components/aouCanvas';
 import Nav, { NavItem } from '../components/nav';
 import { AOUControls } from '../components/aouControls';
@@ -33,7 +33,7 @@ export default function AOUEditor(props: AOUEditorProps) {
                 )}
             </Nav>
             <AOUControls title={activeNav?.title || ""}>
-                {activeNav?.id === 'imageTo3D' ? <ImgTo3D /> : <></>}
+                {activeNav?.id === 'img2Mesh' ? <Img2Mesh /> : <></>}
                 <div>
                     <h3>Generated</h3>
                     {/* add previewing of generated mesh here */}

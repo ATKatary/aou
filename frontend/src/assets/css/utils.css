@@ -18,6 +18,7 @@
 
     .aou-img-previewer p {
         margin: 5px;
+        color: var(--font-color-primary);
         font-size: var(--font-size-body-small);
     }
 
@@ -63,3 +64,7 @@ button {
 
 button:hover {cursor: pointer;}
 button:active {opacity: 0.7;}
+
+svg {
+    color: var(--font-color-primary);
+}

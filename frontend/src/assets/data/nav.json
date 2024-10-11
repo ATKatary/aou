@@ -1,12 +1,12 @@
 {
     "sections": [
         {
-            "id": "library",
+            "id": "lib",
             "title": "Library",
             "icon": "fa-fas fa-folder"
         },
         {
-            "id": "moodboard",
+            "id": "mb",
             "title": "Moodboard",
             "icon": "fa-fas fa-sliders"
         },
@@ -16,17 +16,17 @@
         },
 
         {
-            "id": "textTo3D",
+            "id": "txt2Mesh",
             "title": "Text to 3D",
             "icon": "fa-fas fa-folder"
         },
         {
-            "id": "imageTo3D",
+            "id": "img2Mesh",
             "title": "Image to 3D",
             "icon": "fa-fas fa-file-image"
         },
         {
-            "id": "sketchTo3D",
+            "id": "skt2Mesh",
             "title": "Sketch to 3D",
             "icon": "fa-fas fa-file-contract"
         }
