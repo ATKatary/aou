@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { AOUImg } from "./aouImg";
 import { img2Mesh } from "../api/aou";
@@ -6,9 +7,15 @@ interface ImgTo3DProps extends React.PropsWithChildren<React.HTMLAttributes<HTML
     onGenerated?: (response: string) => void
 }
 
+const img2MeshSocket = new WebSocket("ws://127.0.0.1:8000/ws/img2Mesh/");
+
 export default function Img2Mesh({onGenerated, className, ...props}: ImgTo3DProps) {
     const [img, setImg] = useState<File>()
 
+    img2MeshSocket.onmessage = async(event) => {
+        const response = URL.createObjectURL(event.data)
+        onGenerated && onGenerated(response)
+    }
     // TODO: add a socket connection that continues to call onGenerated as it recieves obj files
 
     return (
@@ -16,8 +23,7 @@ export default function Img2Mesh({onGenerated, className, ...props}: ImgTo3DProp
             <AOUImg onUpload={(file) => setImg(file)}/>
             <button onClick={async () => {
                 if (img) {
-                    const response = URL.createObjectURL(await (await img2Mesh(img)).blob())
-                    onGenerated && onGenerated(response)
+                    img2MeshSocket.send(await img.arrayBuffer())
                 }
             }}>Generate</button>
         </div>
