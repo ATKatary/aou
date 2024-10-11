@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { dataType } from '../types';
 import { useCustomState } from '../utils';
 import navData from '../assets/data/nav.json';
@@ -11,7 +11,7 @@ interface AOUEditorProps extends React.PropsWithChildren<any> {
 }
 
 export default function AOUEditor(props: AOUEditorProps) {
-    const meshes = [0]
+    const [meshes, setMeshes] = useState<string[]>([]);
     const [activeNav, setActiveNav] = useCustomState<dataType>(navData.sections[0] as dataType);
     // all control editing needs to be handled here and it will not know about the changes in the canvas, but that is fine it does not need to. 
     
@@ -33,7 +33,7 @@ export default function AOUEditor(props: AOUEditorProps) {
                 )}
             </Nav>
             <AOUControls title={activeNav?.title || ""}>
-                {activeNav?.id === 'img2Mesh' ? <Img2Mesh /> : <></>}
+                {activeNav?.id === 'img2Mesh' ? <Img2Mesh onGenerated={(response) => setMeshes([response])}/> : <></>}
                 <div>
                     <h3>Generated</h3>
                     {/* add previewing of generated mesh here */}

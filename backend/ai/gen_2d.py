@@ -5,9 +5,9 @@ from diffusers import DiffusionPipeline, EulerAncestralDiscreteScheduler
 SDXL = "stabilityai/stable-diffusion-xl-base-1.0"
 INSTANT_MESH_UNET = f"{BASE_DIR}/instant_mesh/unet.bin"
 
-class SD(torch.nn.Module):
+class GenSD(torch.nn.Module):
     def __init__(self, model="sdxl", dtype=torch.float16):
-        super(SD, self).__init__()
+        super(GenSD, self).__init__()
         self.model = model
         if model == "sdxl":
             self.pipe = DiffusionPipeline.from_pretrained(

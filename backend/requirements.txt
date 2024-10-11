@@ -1,5 +1,5 @@
 diffusers
-fastapi
+fastapi[standard]
 fastapi-cli
 huggingface-hub
 numpy
@@ -8,3 +8,6 @@ torchaudio
 torchmetrics
 torchvision
 transformers
+matplotlib
+numpy 
+opencv-python
