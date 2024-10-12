@@ -157,3 +157,4 @@ backend/cython_debug/
 
 backend/aou_env
 backend/instant_mesh
+backend/out

@@ -38,6 +38,7 @@ export default function AOUMesh({objUrl, orbitRef, position, ...props}: AOUMeshP
                 showX={active}
                 showY={active}
                 showZ={active}
+                mode="rotate"
                 ref={transformRef}
                 position={position}
             >

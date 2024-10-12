@@ -9,9 +9,9 @@
     .pointer:hover {cursor: pointer;}
 
     .aou-img-previewer {
-        padding: 10px;
+        padding: 5px;
         height: 200px;
-        width: calc(100% - 20px);
+        width: calc(100% - 10px);
         border-radius: var(--border-radius);
         border: 2px solid var(--bg-secondary);
     }
