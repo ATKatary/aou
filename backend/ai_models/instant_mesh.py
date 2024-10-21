@@ -1,18 +1,22 @@
-import uuid
+import sys 
 import torch
-from utils import *
+import pymeshlab
+import numpy as np
+from utils import BASE_DIR
 from einops import rearrange
 from omegaconf import OmegaConf
 from torchvision.transforms import v2
+
+sys.path.append("/home/farazfaruqi")
 from instant_mesh.src.utils.mesh_util import *
 from instant_mesh.src.utils.train_util import *
 from instant_mesh.src.utils.camera_util import *
 
-INSTANT_MESH_BASE_CONFIG = f"{BASE_DIR}/instant_mesh/configs/instant-mesh-base.yaml"
+INSTANT_MESH_BASE_CONFIG = f"{BASE_DIR.parent}/instant_mesh/configs/instant-mesh-base.yaml"
 
-class Img2Mesh(torch.nn.Module):
+class InstantMesh(torch.nn.Module):
     def __init__(self, config=INSTANT_MESH_BASE_CONFIG, device="cuda"):
-        super(Img2Mesh, self).__init__()
+        super(InstantMesh, self).__init__()
         self.device = device
         self.config = OmegaConf.load(config)
         
@@ -45,18 +49,14 @@ class Img2Mesh(torch.nn.Module):
             planes = self.model.forward_planes(img, self.cameras)
 
             # get mesh
-            mesh_path = f"{BASE_DIR}/out/{uuid.uuid4()}.obj"
-
             mesh_out = self.model.extract_mesh(
                 planes,
                 use_texture_map=False,
                 **self.infer_config,
             )
 
-            vertices, faces, vertex_colors = mesh_out
-            save_obj(vertices, faces, vertex_colors, mesh_path)
-            
-            return mesh_path
+            vertices, faces, vertex_colors = mesh_out[:3]
+            return pymeshlab.Mesh(vertices, faces, v_color_matrix=vertex_colors)
 
     def to(self, device):
         self.model.to(device)
