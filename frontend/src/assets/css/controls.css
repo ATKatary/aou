@@ -7,7 +7,7 @@
         right: var(--nav-left);
         width:  var(--controls-width);
         border-radius: var(--border-radius);
-        background-color: var(--bg-primary);
+        background-color: var(--bg-secondary);
     }
 
     #controls > h1 {
@@ -28,12 +28,12 @@
     }
 
     #controls textarea { 
-        padding: 5px;
         resize: none;
         height: 100px;
-        width: calc(100% - 10px);
+        padding: 10px;
+        width: calc(100% - 20px);
         border-radius: var(--border-radius);
-        border: 2px solid var(--bg-secondary);
+        border: 2px solid var(--bg-primary);
     }
 
     #view-controls {
@@ -44,8 +44,8 @@
         border-radius: 40px;
         top: calc(var(--nav-top) / 2);
         background-color: var(--bg-primary);
-        border: 1px solid var(--font-color-primary);
         left: calc(50% - 150px - 275px + 210px);
+        /* border: 1px solid var(--font-color-primary); */
     }
 
     #view-controls button { 

@@ -1,25 +1,40 @@
 @media (prefers-color-scheme: light) {
     :root {
-        --bg-primary: #fff;  
-        --bg-secondary: #f0f0f0;
+        --bg-primary: #DDDDDD;  
+        --bg-secondary: #F9F3F3;
 
-        --font-color-primary: #000000;
-
-        --primary: #e8def8;
+        --font-color-primary: #222831;
+        --font-color-secondary: #31363F;
     }   
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-primary: #1E201E;  
-        --bg-secondary: #3C3D37;
+        --bg-primary: #222831;  
+        --bg-secondary: #31363F;
 
-        --font-color-primary: #ffffff;
-
-        --primary: #4f378a;
+        --font-color-primary: #DDDDDD;
+        --font-color-secondary: #F9F3F3;
     }   
 }
 
 :root {
+    --border-radius: 15px;
+    --btn-border-radius: 10px;
+
     --controls-width: 275px;
+
+    --primary: #76ABAE;
+    --secondary: #CB6040;
+    --tertiary: #604CC3;
+    --quaternary: #295F98;
+
+    --error: #ef5050;
+    --success: #55dd99;
+
+    --node-color-txt: var(--bg-secondary);
+    --node-color-img: var(--bg-secondary);
+    --node-color-mesh: var(--bg-secondary);
+    --node-color-sketch: var(--bg-secondary);
+    --node-color-generatedImg: var(--bg-secondary);
 }

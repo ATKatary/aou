@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { themeType } from "./types"
+import { navStateType, themeType } from "./types"
 
 export const getPropValue =  (prop: string) => window.getComputedStyle(document.documentElement).getPropertyValue(prop)
 export function getTheme(): themeType {
@@ -20,29 +20,51 @@ export function useCustomState<T>(initialState: any): [T, (newState: any) => any
     return [state, setCustomSate];
 }
 
-export async function post(url: RequestInfo | URL, body: any, headers: HeadersInit, other?: any) {
-    return await fetch(url, {
-        method: 'POST',
-        headers: {
-            ...headers
-        },
-        credentials: 'same-origin',
-        body: body,
-        ...other
-    })
-}
-
-export async function get(url: string, args: Object, headers: HeadersInit) {
+export function constructUrl(url: string, args: Object) {
     url += "?";
     for (const [arg, value] of Object.entries(args)) {
         url += `${arg}=${value}&`
     }
 
-    return await fetch(url, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            ...headers
-        },
-    })
+    return url
+}
+
+export function stateToUrl(state: navStateType) {
+    let url = `/${state.id}`
+
+    while (state.prevState) {
+        url = `${url}/${state.prevState.id}`
+        state = state.prevState
+    }
+
+    return url
+}
+
+export function addToLocalStorage(key: string, value: string) {
+    try {
+        localStorage.setItem(key, value);
+    } catch (error) {
+        clearLocalStorage();
+        localStorage.setItem(key, value);
+    }
+}
+
+export function clearLocalStorage() {
+    const permanent: string[] = [];
+    const n = localStorage.length;
+
+    for (let i = 0; i < n; i++) {
+        const key = localStorage.key(i);
+        if (!key) continue;
+        if (permanent.includes(key)) continue;
+        localStorage.removeItem(key);
+    }
+}
+
+export function img2Base64(img: Blob, callback: (url: string) => void) {
+    var reader = new FileReader();
+    reader.onloadend = function() {
+      if (typeof reader.result === 'string') return callback(reader.result)
+    }
+    reader.readAsDataURL(img);
 }

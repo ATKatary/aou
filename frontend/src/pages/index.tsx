@@ -1,3 +1,5 @@
-import AOUEditor from "./aouEditor";
+import MB from "./mb";
+import Home from "./home";
+import Editor from "./editor";
 
-export { AOUEditor };
+export { Editor, Home, MB };

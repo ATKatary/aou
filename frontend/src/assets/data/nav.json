@@ -1,34 +1,31 @@
 {
-    "sections": [
+    "home": [
         {
-            "id": "lib",
-            "title": "Library",
+            "id": "projects",
+            "title": "All projects",
+            "href": "/akatary/projects",
             "icon": "fa-fas fa-folder"
         },
         {
-            "id": "mb",
-            "title": "Moodboard",
+            "id": "playground",
+            "href": "/akatary/playground",
+            "title": "Playground",
             "icon": "fa-fas fa-sliders"
-        },
+        }
+    ],
 
+    "playground": [
         {
-            "id": "empty"
-        },
-
-        {
+            "href": "",
             "id": "txt2Mesh",
-            "title": "Text to 3D",
-            "icon": "fa-fas fa-folder"
+            "title": "Text to Mesh",
+            "icon": "fa-fas fa-file"
         },
         {
+            "href": "",
             "id": "img2Mesh",
-            "title": "Image to 3D",
+            "title": "Image to Mesh",
             "icon": "fa-fas fa-file-image"
-        },
-        {
-            "id": "skt2Mesh",
-            "title": "Sketch to 3D",
-            "icon": "fa-fas fa-file-contract"
         }
     ]
 }
