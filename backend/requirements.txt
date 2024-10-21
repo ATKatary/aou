@@ -1,0 +1,7 @@
+channels
+daphne
+Django
+django-admin
+django-cors-headers
+django-ninja
+
